@@ -1,7 +1,18 @@
 library = []
 
 def add_book():
-    print("Add book feature placeholder.")
+    title = input("Enter book title: ")
+    author = input("Enter author name: ")
+
+    book = {
+        'title': title,
+        'author': author,
+        'is_available': True
+    }
+
+    library.append(book)
+    print("Book added successfully!")
+
 
 def view_books():
     print("View book placeholder.")
