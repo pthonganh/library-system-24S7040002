@@ -26,7 +26,18 @@ def view_books():
 
 
 def search_book():
-    print("Search book placeholder.")
+    query = input("Enter keyword to search: ").lower()
+
+    results = [book for book in library if query in book['title'].lower()]
+
+    if results:
+        print("\n--- SEARCH RESULTS ---")
+        for book in results:
+            status = "Available" if book['is_available'] else "Not available"
+            print(f"{book['title']} - {book['author']} ({status})")
+    else:
+        print("No matching books found.")
+
 
 def main():
     while True:
